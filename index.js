@@ -100,16 +100,24 @@ var totalChange= 0;
 var averageChange = 0;
 var difference = 0;
 var greatestIncrease = 0;
+var greatIncreaseMonth = "";
 var greatestDecrease = 0;
+var greatestDecreaseMonth = "";
 for(j=1;j<totalNumberMonth; j++){
     difference = finances[j][1] - finances[j-1][1];
     totalChange = totalChange + difference;
-    greatestIncresease = Math.max(greatestIncrease, difference);
-    greatestDecrease = Math.min (greatestDecrease, difference);
+    if(difference > greatestIncrease){
+        greatestIncreaseMonth = finances[j][0];
+        greatestIncrease = difference;
+    };
+    if(difference < greatestDecrease){
+        greatestDecreaseMonth = finances[j][0];
+        greatestDecrease = difference;
+    }
 }
 averageChange = totalChange/(totalNumberMonth-1);
 averageChange = (Math.round(averageChange * 100)/100);
 console.log("Average changes in Profit/Losses over the entire period: $" + averageChange);
-console.log("Greatest increase in profit; $" + greatestIncrease);
-console.log("Greatest decrease in profit: $" + greatestDecrease);
+console.log("Greatest increase in profit: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
+console.log("Greatest decrease in profit: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")");
 
