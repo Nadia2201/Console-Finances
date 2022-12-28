@@ -88,13 +88,13 @@ var finances = [
 ];
 var totalNumberMonth = 0;
 totalNumberMonth = finances.length;
-console.log("Financial analysis\n----------------------------\nTotal Months: " + totalNumberMonth);
+console.log("Financial Analysis\n----------------------------\nTotal Months: " + totalNumberMonth);
 var i = 0;
 var amountProfitLoss = 0;
 for ( i=0; i<totalNumberMonth; i++){
     amountProfitLoss = amountProfitLoss + finances[i][1];
 }
-console.log("Total amount of Profit/losses over the period: $" + amountProfitLoss);
+console.log("Total Amount of Profit over the period: $" + amountProfitLoss);
 var j = 1;
 var totalChange= 0;
 var averageChange = 0;
@@ -117,7 +117,7 @@ for(j=1;j<totalNumberMonth; j++){
 }
 averageChange = totalChange/(totalNumberMonth-1);
 averageChange = (Math.round(averageChange * 100)/100);
-console.log("Average changes in Profit/Losses over the entire period: $" + averageChange);
-console.log("Greatest increase in profit: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
-console.log("Greatest decrease in profit: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")");
+console.log("Average Change in Profit: $" + averageChange);
+console.log("Greatest Increase in Profit: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
+console.log("Greatest Decrease in Profit: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")");
 
