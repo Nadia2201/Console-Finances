@@ -88,4 +88,12 @@ var finances = [
 ];
 var totalNumberMonth = 0;
 totalNumberMonth = finances.length;
-console.log("Total Months: " + totalNumberMonth);
+console.log("Financial analysis\n----------------------------\nTotal Months: " + totalNumberMonth);
+var i = 0;
+var amountProfitLoss = 0;
+for ( i=0; i<totalNumberMonth; i++){
+    amountProfitLoss = amountProfitLoss + finances[i][1];
+}
+console.log("Total amount of Profit/losses over the period: $" + amountProfitLoss);
+
+
