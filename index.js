@@ -86,15 +86,20 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
+//Calcul of total number of months
 var totalNumberMonth = 0;
 totalNumberMonth = finances.length;
+//Display result
 console.log("Financial Analysis\n----------------------------\nTotal Months: " + totalNumberMonth);
+//Calculate total amount of Profot/Losses
 var i = 0;
 var amountProfitLoss = 0;
 for (i = 0; i < totalNumberMonth; i++) {
     amountProfitLoss = amountProfitLoss + finances[i][1];
 }
+//Display result
 console.log("Total Amount of Profit over the period: $" + amountProfitLoss);
+//Inititate all the variable that wil be used to store results
 var j = 1;
 var totalChange = 0;
 var averageChange = 0;
@@ -103,6 +108,7 @@ var greatestIncrease = 0;
 var greatIncreaseMonth = "";
 var greatestDecrease = 0;
 var greatestDecreaseMonth = "";
+//Loop that calculate at the same time: total changes in profit, greatest increase and greatest decrease
 for (j = 1; j < totalNumberMonth; j++) {
     difference = finances[j][1] - finances[j - 1][1];
     totalChange = totalChange + difference;
@@ -115,8 +121,11 @@ for (j = 1; j < totalNumberMonth; j++) {
         greatestDecrease = difference;
     }
 }
+//Calculate average change
 averageChange = totalChange / (totalNumberMonth - 1);
+//Round average change to the nearest 100th
 averageChange = (Math.round(averageChange * 100) / 100);
+//Display results
 console.log("Average Change in Profit: $" + averageChange);
 console.log("Greatest Increase in Profit: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
 console.log("Greatest Decrease in Profit: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")");
