@@ -95,5 +95,14 @@ for ( i=0; i<totalNumberMonth; i++){
     amountProfitLoss = amountProfitLoss + finances[i][1];
 }
 console.log("Total amount of Profit/losses over the period: $" + amountProfitLoss);
+var j = 1;
+var totalChange= 0;
+var averageChange = 0;
+for(j=1;j<finances.length; j++){
+    totalChange = totalChange + finances[j][1];
+}
+averageChange = totalChange/totalNumberMonth;
+averageChange = (Math.round(averageChange * 100)/100);
+console.log("Average changes in Profit/Losses over the entire period: $" + averageChange);
 
 
